@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "880d1977-20bf-4cf0-aad2-272023464b74",
+		"name": "Todo/Kotlin/Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11629343"
+	},
+	"item": [
+		{
+			"name": "Get Todo",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Add Todo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"todoTitle\",\n    \"done\": true\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/todo",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Todo",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"changedTodoTitle\",\n    \"done\": true,\n    \"id\": \"f7aca016-9b2f-4923-b060-963a62cd6713\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/todo",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get TodoList",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Add TodoList",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"someName\",\n    \"todo\": [\n        \"0\"\n    ]\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/todoList",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todoList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update TodoList",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"someName\",\n    \"todo\": [\n        {\"title\": \"todoTitle\", \"done\": true },\n        {\"title\": \"todoTitle2\", \"done\": true }\n    ]\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/todoList",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todoList"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
