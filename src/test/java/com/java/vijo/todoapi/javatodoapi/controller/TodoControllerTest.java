@@ -62,6 +62,17 @@ class TodoControllerTest {
             .isEqualTo(ResponseEntity.status(HttpStatus.CREATED).body(todo));
     }
 
+    @Test
+    void get_Invalid_TodoID_Returns_BadRequest() {
+        //Arrange
+
+        //Act
+        ResponseEntity<?> res = todoController.getTodo("someInvalidID");
+
+        //Assert
+        assertEquals(HttpStatus.BAD_REQUEST, res.getStatusCode());
+    }
+
     //Update Tests
     @Test
     void update_Existent_Todo_Returns_Created() {

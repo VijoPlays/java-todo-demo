@@ -1,16 +1,81 @@
 {
 	"info": {
 		"_postman_id": "880d1977-20bf-4cf0-aad2-272023464b74",
-		"name": "Todo/Kotlin/Demo",
+		"name": "Todo/Java/Demo",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "11629343"
 	},
 	"item": [
 		{
 			"name": "Get Todo",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/todo?id=b8264b0e-2075-4d60-ba26-9ef2b6d0c557",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "b8264b0e-2075-4d60-ba26-9ef2b6d0c557"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Invalid Todo ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/todo?id=b8264b0e-2075-4d60-ba26-9ef2b6d0c557",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todo"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "b8264b0e-2075-4d60-ba26-9ef2b6d0c557"
+						}
+					]
+				}
 			},
 			"response": []
 		},
@@ -55,7 +120,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"changedTodoTitle\",\n    \"done\": true,\n    \"id\": \"f7aca016-9b2f-4923-b060-963a62cd6713\"\n}"
+					"raw": "{\n    \"title\": \"changedTodoTitle\",\n    \"done\": false,\n    \"id\": \"f4143d8c-b604-46b9-81f0-77e903476a8e\"\n}"
 				},
 				"url": {
 					"raw": "localhost:8080/todo",
@@ -74,7 +139,59 @@
 			"name": "Get TodoList",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/todoList?id=8eb6fe03-e6bc-44ae-b844-1d0da04afd31",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todoList"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "8eb6fe03-e6bc-44ae-b844-1d0da04afd31"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Invalid TodoList ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/todoList?id=8eb6fe03-e6bc-44ae-b844-1d0da04afd31",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"todoList"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "8eb6fe03-e6bc-44ae-b844-1d0da04afd31"
+						}
+					]
+				}
 			},
 			"response": []
 		},
@@ -91,7 +208,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"someName\",\n    \"todo\": [\n        \"0\"\n    ]\n}"
+					"raw": "{\n    \"title\": \"someName\",\n    \"todos\": [\n        \"f4143d8c-b604-46b9-81f0-77e903476a8e\"\n    ]\n}"
 				},
 				"url": {
 					"raw": "localhost:8080/todoList",
@@ -119,7 +236,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"someName\",\n    \"todo\": [\n        {\"title\": \"todoTitle\", \"done\": true },\n        {\"title\": \"todoTitle2\", \"done\": true }\n    ]\n}"
+					"raw": "{\n    \"title\": \"someOtherName\",\n    \"id\": \"8eb6fe03-e6bc-44ae-b844-1d0da04afd31\",\n    \"todos\": [\n        \"769186e8-ca36-40e4-b9d7-5bb655fde913\",\n        \"f4143d8c-b604-46b9-81f0-77e903476a8e\"\n    ]\n}"
 				},
 				"url": {
 					"raw": "localhost:8080/todoList",

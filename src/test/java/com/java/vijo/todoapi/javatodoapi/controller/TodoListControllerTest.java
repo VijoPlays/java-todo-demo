@@ -36,7 +36,7 @@ class TodoListControllerTest {
     }
 
     @Test
-    void get_NonExistent_TodoID_Returns_NoContent() {
+    void get_NonExistent_TodoListID_Returns_NoContent() {
         //Arrange
 
         //Act
@@ -46,6 +46,17 @@ class TodoListControllerTest {
         assertThat(res)
                 .usingRecursiveComparison()
                 .isEqualTo(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null));
+    }
+
+    @Test
+    void get_Invalid_TodoListID_Returns_BadRequest() {
+        //Arrange
+
+        //Act
+        ResponseEntity<?> res = todoListController.getTodoList("someInvalidID");
+
+        //Assert
+        assertEquals(HttpStatus.BAD_REQUEST, res.getStatusCode());
     }
 
     //Create Tests
