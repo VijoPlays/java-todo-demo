@@ -1,10 +1,15 @@
 package com.java.vijo.todoapi.javatodoapi.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.UUID;
 
 /**
  * A TodoObject describing a task a user wants to do.
  */
+@Setter
+@Getter
 public class TodoObject {
 
     /**
@@ -39,25 +44,5 @@ public class TodoObject {
      */
     public TodoObject(String title) {
         this(title, false);
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public boolean isDone() {
-        return done;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setDone(boolean done) {
-        this.done = done;
     }
 }

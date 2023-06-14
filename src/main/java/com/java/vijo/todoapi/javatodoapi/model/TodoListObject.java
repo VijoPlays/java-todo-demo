@@ -1,5 +1,8 @@
 package com.java.vijo.todoapi.javatodoapi.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -7,6 +10,8 @@ import java.util.UUID;
 /**
  * A list containing multiple TodoObjects.
  */
+@Getter
+@Setter
 public class TodoListObject {
 
     /**
@@ -41,21 +46,5 @@ public class TodoListObject {
      */
     public TodoListObject(String title) {
         this(title, new ArrayList<>());
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public List<UUID> getTodos() {
-        return todos;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 }
